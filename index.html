@@ -14,11 +14,22 @@
 <body>
     <header class="header">
         <div class="header__top">
-            <div class="wrap--small wrap--header">
-                <h1 class="header__logo">Sit <span>on</span> chair</h1>
+            <div class="wrap wrap--header">
+                <h2 class="header__logo">Sit <span>on</span> chair</h2>
                 <nav class="header__nav">
                     <ul class="header__nav-list">
-                        <li class="header__nav-list-item"><a class="header__nav-link" href="#">O firmie</a></li>
+                        <li class="header__nav-list-item">
+                            <a class="header__nav-link" href="#">O firmie</a>
+                            <!-- miejsce na nawigacje wewnątrz -->
+                            <ul class="header__sublist">
+                                <li class="header__sublist-item"><a class="header__sublist-link"
+                                        href="#">Aktualności</a></li>
+                                <li class="header__sublist-item"><a class="header__sublist-link" href="#">Nasz team</a>
+                                </li>
+                                <li class="header__sublist-item"><a class="header__sublist-link" href="#">Historia</a>
+                                </li>
+                            </ul>
+                        </li>
                         <li class="header__nav-list-item"><a class="header__nav-link" href="#">Galeria</a></li>
                         <li class="header__nav-list-item"><a class="header__nav-link" href="#">Kontakt</a></li>
                     </ul>
@@ -26,8 +37,20 @@
             </div>
         </div>
         <div class="header__slider">
-            <div class="wrap">
-
+            <div class="wrap wrap--slider">
+                <div class="slider__arrow">&lt;</div>
+                <div class="slider__img">
+                    <img src="images/black_chair.png" alt="Top chair">
+                </div>
+                <div class="slider__text">
+                    <h1 class="heading--1">Sit <span>on</span> our <span>chair</span></h1>
+                    <p class="slider__text-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
+                        aliquid enim atque, ipsa ab
+                        sapiente quaerat, eum, harum dolores unde optio placeat molestias sint quidem fuga ex ea
+                        obcaecati similique?</p>
+                    <button class='btn btn--slider'>Zobacz więcej</button>
+                </div>
+                <div class="slider__arrow">&gt;</div>
             </div>
         </div>
     </header>
