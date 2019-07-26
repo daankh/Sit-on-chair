@@ -20,7 +20,81 @@ body {
 /* ------------------------- */
 /* REUSABLE ELEMENTS */
 /* ------------------------- */
-.wrap {
+.wrap--big {
     max-width: 1200px;
     margin: 0 auto;
 }
+
+.wrap--small {
+    max-width: 1060px;
+    margin: 0 auto;
+}
+
+.wrap--header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 42px;
+}
+
+/* ------------------------- */
+/* HEADER */
+/* ------------------------- */
+.header {}
+
+.header__top {
+    background-color: #000;
+}
+
+.header__logo {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    word-spacing: 2px;
+    letter-spacing: 1px;
+}
+
+.header__logo span {
+    color: #57BBA0;
+}
+
+.header__nav {}
+
+.header__nav-list {
+    list-style: none;
+    display: flex;
+}
+
+.header__nav-list-item {
+    padding: 0 22px;
+}
+
+.header__nav-list-item:last-child {
+    padding-right: 0;
+}
+
+.header__nav-link:link,
+.header__nav-link:visited {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.header__slider {
+    height: 400px;
+    background-color: #aaa;
+}
+
+
+/* do uzupełnienia wysuwane menu */
+
+
+/* ------------------------- */
+/* HEADER */
+/* ------------------------- */
