@@ -1,7 +1,9 @@
 /* ------------------------- */
 /* BASICS */
 /* ------------------------- */
-* {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: inherit;
@@ -14,176 +16,189 @@ html {
 
 body {
     box-sizing: border-box;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Raleway', Tahoma, Arial, sans-serif;
+}
+
+a {
+    display: block;
+    text-decoration: none;
 }
 
 /* ------------------------- */
 /* REUSABLE ELEMENTS */
 /* ------------------------- */
-/* wrappper */
+
 .wrap {
-    max-width: 1064px;
+    max-width: 1054px;
     margin: 0 auto;
+    /* border: 1px solid red; */
 }
 
 .wrap--header {
+    height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 41px;
 }
 
 .wrap--slider {
-    position: relative;
     height: 100%;
+    position: relative;
 }
 
-/* button */
-
-.btn {
-    border: none;
-    color: #fff;
-    background-color: #57BBA0;
-    text-transform: uppercase;
-}
-
-.btn--slider {
-    line-height: 240%;
-    font-size: 2.2rem;
-    letter-spacing: 1px;
-    /* font-weight: 700; */
-    margin: 0 80px;
-    padding: 0 39px;
-    border-radius: 10px;
-}
+/* .wrap--products {
+    height: 100%;
+} */
 
 /* ------------------------- */
-/* HEADER - navigation */
+/* HEADER */
 /* ------------------------- */
+
 .header {}
 
+/* HEADER TOP */
+
 .header__top {
-    background-color: #000;
+    height: 41px;
+    background-color: #000000;
+    color: #fff;
 }
 
+/* header logo */
 .header__logo {
-    color: #fff;
     text-transform: uppercase;
-    font-size: 1.4rem;
-    word-spacing: 2px;
-    letter-spacing: 1px;
+    font-size: 1.5rem;
 }
 
 .header__logo span {
-    color: #57BBA0;
+    color: #61CEAC;
 }
 
+/* header nav */
 .header__nav {
+    width: 287px;
     height: 100%;
 }
 
 .header__nav-list {
+    height: 100%;
     list-style: none;
     display: flex;
-    align-items: center;
-    height: 100%;
+    justify-content: space-between;
 }
 
 .header__nav-list-item {
-    padding: 0 22px;
     height: 100%;
-}
-
-.header__nav-list-item:last-child {
-    padding-right: 0;
 }
 
 .header__nav-link:link,
 .header__nav-link:visited {
-    display: block;
     width: 100%;
     height: 100%;
-    text-decoration: none;
-    color: #fff;
-    text-transform: uppercase;
+    color: inherit;
     font-size: 1.4rem;
-    font-weight: bold;
+    text-transform: uppercase;
+    font-weight: 700;
     letter-spacing: 1px;
-    line-height: 41px;
+
+    display: flex;
+    align-items: center;
 }
 
-/* do uzupełnienia wysuwane menu */
-.header__nav-list-item:first-child {
+/* dropdown menu */
+.dropdown {
     position: relative;
-}
-
-.header__sublist {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    transform: translate(0, 100%);
-    list-style: none;
-    width: 120px;
-
 }
 
 .header__sublist::before {
     content: '';
     display: block;
-    height: 10px;
+    height: 16px;
+    width: 16px;
+    background-color: #000;
+    position: absolute;
+    left: 45%;
+    top: 0;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.header__sublist {
+    list-style: none;
+    position: absolute;
+    top: 53px;
+    left: -15px;
+    width: 120px;
+    height: 95px;
+
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-between; */
+
+    /* display: none; */
+}
+
+.dropdown:hover .header__sublist {
+    display: block;
 }
 
 .header__sublist-item {
     background-color: #000;
+    height: calc(100%/3);
 }
 
 .header__sublist-link:link,
 .header__sublist-link:visited {
-    text-decoration: none;
     color: #fff;
-    font-size: 1.4rem;
-    display: block;
+    font-size: 1.6rem;
     width: 100%;
-    padding: 8px;
-    text-align: center;
+    height: 100%;
+    padding-left: 12px;
+
+    display: flex;
+    align-items: center;
 }
 
-/* ------------------------- */
-/* HEADER  - slider */
-/* ------------------------- */
+.header__sublist-item:first-child .header__sublist-link {
+    padding-top: 13px;
+}
+
+.header__sublist-item:nth-child(2) .header__sublist-link {
+    padding-top: 4px;
+}
+
+.header__sublist-item:last-child .header__sublist-link {
+    padding-bottom: 3px;
+}
+
+/* HEADER SLIDER */
+
 .header__slider {
-    height: 504px;
     background-image: linear-gradient(#fff 50%, #CCCFD6);
+    height: 504px;
 }
 
 .wrap--slider>* {
     position: absolute;
-    left: 0;
-    top: 0;
 }
 
 .slider__arrow {
-    font-size: 7rem;
-    font-weight: 300;
-    line-height: 100%;
-    color: #57B896;
+    font-size: 8rem;
+    color: #50B09A;
     top: 50%;
+    transform: translateY(-50%);
 }
 
 .slider__arrow:first-of-type {
     left: 0;
-    transform: translateY(-50%);
 }
 
 .slider__arrow:last-of-type {
-    left: 100%;
-    transform: translate(-100%, -50%);
-
+    right: 0;
 }
 
 .slider__img {
-    top: 67px;
-    left: -42px;
+    top: 70px;
+    left: -37px;
 }
 
 .slider__img img {
@@ -192,25 +207,51 @@ body {
 }
 
 .slider__text {
-    width: 425px;
+    width: 414px;
+    height: 245px;
+    top: 134px;
     left: 490px;
-    top: 136px;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.heading--1 {
+.slider__text h1 {
+    font-size: 4rem;
     text-transform: uppercase;
-    font-size: 3.8rem;
-    text-align: center;
-    letter-spacing: 1px;
+    font-weight: 400;
 }
 
-.heading--1 span {
-    color: #57BBA0;
+.slider__text h1 span {
+    color: #57BDA3;
+    font-weight: 700;
 }
 
-.slider__text-content {
-    text-align: center;
-    font-size: 1.6rem;
-    line-height: 140%;
-    margin: 28px 0;
+.slider__text p {
+    font-size: 1.4rem;
+    line-height: 160%;
 }
+
+.slider__text button {
+    border: none;
+    background-color: #57BDA3;
+    color: #fff;
+    text-transform: uppercase;
+    width: 255px;
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+    line-height: 52px;
+    border-radius: 10px;
+    margin-left: 16px;
+}
+
+/* ------------------------- */
+/* SECTION PRODUCTS */
+/* ------------------------- */
+
+/* .products {
+    height: 300px;
+} */
