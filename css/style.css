@@ -1,0 +1,24 @@
+/* ------------------------- */
+/* BASICS */
+/* ------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    box-sizing: border-box;
+}
+
+/* ------------------------- */
+/* REUSABLE ELEMENTS */
+/* ------------------------- */
+.wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+}
