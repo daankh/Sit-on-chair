@@ -51,22 +51,93 @@ a {
     justify-content: space-between;
 }
 
+.wrap--prices {}
+
 /* headings */
+.heading-2 {
+    font-size: 2.2rem;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.prices .heading-2 {
+    padding: 44px 0 76px 0;
+}
+
 .heading-3 {
     font-size: 1.6rem;
     font-weight: 400;
 }
 
+.heading-2::after,
 .heading-3::after {
     content: "";
     display: block;
     background-color: #5EC9AC;
     height: 7px;
+}
+
+.heading-2::after {
+    margin-top: 5px;
+    width: 318px;
+}
+
+.heading-3::after {
     width: 138px;
 }
 
 .heading-3 span {
     text-transform: uppercase;
+}
+
+.heading-4 {
+    text-transform: uppercase;
+    font-size: 2.3rem;
+    font-weight: 400;
+    text-align: center;
+    line-height: 82px;
+}
+
+.heading-4--green {
+    color: #5DC9AC;
+}
+
+.heading-4--white {
+    color: #fff;
+}
+
+/* buttons */
+.btn {
+    border: none;
+
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btn--green {
+    background-color: #57BDA3;
+    color: #fff;
+}
+
+.btn--white {
+    background-color: #fff;
+    color: #57BDA3;
+}
+
+.btn--slider {
+    font-size: 2.2rem;
+    line-height: 52px;
+    width: 255px;
+    box-sizing: content-box;
+    margin-left: 20px;
+    padding-left: 15px;
+}
+
+.btn--card {
+    font-size: 1.5rem;
+    padding: 8px 28px;
 }
 
 /* .wrap--products {
@@ -258,19 +329,6 @@ a {
     line-height: 160%;
 }
 
-.slider__text button {
-    border: none;
-    background-color: #57BDA3;
-    color: #fff;
-    text-transform: uppercase;
-    width: 255px;
-    font-size: 2.2rem;
-    letter-spacing: 2px;
-    line-height: 52px;
-    border-radius: 10px;
-    margin-left: 16px;
-}
-
 /* ------------------------- */
 /* SECTION PRODUCTS */
 /* ------------------------- */
@@ -326,6 +384,152 @@ a {
 /* ------------------------- */
 
 .prices {
-    min-height: 300px;
+    padding-bottom: 68px;
     background-color: #F2F2F2;
+}
+
+.products-plans {
+    display: flex;
+    justify-content: space-between;
+}
+
+.plan-card {
+    position: relative;
+    background-color: #F9F9F9;
+    border: 2px solid #C2C2C2;
+    width: 327px;
+    height: 500px;
+    border-radius: 5px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.plan-card--green {
+    background-color: #5DC9AC;
+    border-color: #5DC9AC;
+}
+
+.plan-card::before {
+    box-sizing: content-box;
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    content: '';
+    display: block;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+
+    background-color: #C2C2C2;
+    border: 13px solid #fff;
+    box-shadow: 0 0 0 2px #C2C2C2;
+}
+
+.plan-card.plan-card--green::before {
+    background-color: #fff;
+    border: 13px solid #5DC9AC;
+    box-shadow: none;
+}
+
+.card-price {
+    height: 164px;
+    border-bottom: 2px solid #fff;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.card-price--green {
+    border-bottom: none;
+}
+
+.card-price-container {
+    border: 2px solid #C2C2C2;
+    color: #C5C5C5;
+    background-color: #fff;
+    border-radius: 50%;
+    width: 130px;
+    height: 130px;
+    font-weight: 700;
+
+    position: relative;
+
+}
+
+.card-price--green .card-price-container {
+    border-color: #5DC9AC;
+    color: #5DC9AC;
+}
+
+.card-price-value {
+    position: absolute;
+    font-size: 4.6rem;
+    left: 33px;
+    top: 24px;
+}
+
+.card-price-value--threeNumbers {
+    left: 14px;
+}
+
+.card-price-value span {
+    position: relative;
+    left: 0;
+    top: -24px;
+    font-size: 1.6rem;
+}
+
+.card-price-currency {
+    position: absolute;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    left: 50%;
+    bottom: 22%;
+    transform: translateX(-50%)
+}
+
+.card-feature {
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-feature:nth-of-type(2n-1) {
+    background-color: #F2F2F2;
+    color: #6F6F6F;
+}
+
+.plan-card--green .card-feature:nth-of-type(2n-1) {
+    background-color: #F2F2F2;
+    color: #B0B1B0;
+}
+
+.card-feature:nth-of-type(2n) {
+    background-color: #E4E4E4;
+    color: #909090;
+}
+
+.plan-card--green .card-feature:nth-of-type(2n) {
+    background-color: #fff;
+    color: #B0B1B0;
+}
+
+.card-feature p {
+    font-size: 2.4rem;
+}
+
+.card-btn-container {
+    flex-grow: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 16px;
 }
