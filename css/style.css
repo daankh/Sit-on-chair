@@ -249,23 +249,21 @@ button {
     background-color: #000;
     position: absolute;
     left: 45%;
-    top: 0;
-    transform: translate(-50%, -50%) rotate(45deg);
+    top: 5px;
+    transform: rotate(45deg);
 }
 
 .header__sublist {
     list-style: none;
     position: absolute;
-    top: 53px;
+    top: 40px;
     left: -15px;
     width: 120px;
-    height: 95px;
+    height: 105px;
+    z-index: 1;
+    padding-top: 10px;
 
-    /* display: flex;
-    flex-direction: column;
-    justify-content: space-between; */
-
-    /* display: none; */
+    display: none;
 }
 
 .dropdown:hover .header__sublist {
