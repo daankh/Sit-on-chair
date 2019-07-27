@@ -243,14 +243,18 @@ button {
 
 .header__sublist::before {
     content: '';
-    display: block;
-    height: 16px;
-    width: 16px;
-    background-color: #000;
+    border-top: 10px solid transparent;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid black;
+    width: 0;
+    height: 0;
     position: absolute;
-    left: 45%;
-    top: 5px;
-    transform: rotate(45deg);
+    left: 50%;
+    top: 0;
+    transform: translate(-100%, -9px);
+    border-width: 0;
+    transition: .1s;
 }
 
 .header__sublist {
@@ -262,12 +266,16 @@ button {
     height: 105px;
     z-index: 1;
     padding-top: 10px;
-
-    display: none;
+    height: 0;
+    transition: height .2s;
 }
 
 .dropdown:hover .header__sublist {
-    display: block;
+    height: 105px;
+}
+
+.dropdown:hover .header__sublist::before {
+    border-width: 10px;
 }
 
 .header__sublist-item {
