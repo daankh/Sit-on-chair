@@ -32,6 +32,7 @@ button {
     border: none;
     background-color: transparent;
     cursor: pointer;
+
 }
 
 /* ------------------------- */
@@ -137,6 +138,8 @@ button {
     letter-spacing: 1px;
     border-radius: 10px;
     cursor: pointer;
+
+    transition: .2s
 }
 
 .btn--green {
@@ -167,6 +170,15 @@ button {
     font-weight: 700;
     font-size: 3.5rem;
     padding: 16px 28px;
+}
+
+.btn:hover,
+.btn--green:hover {
+    filter: brightness(1.1);
+}
+
+.btn--white:hover {
+    filter: brightness(.9);
 }
 
 /* ------------------------- */
@@ -390,6 +402,11 @@ button {
     height: 60px;
     width: 100%;
     background-color: rgba(255, 255, 255, .4);
+    transition: .2s;
+}
+
+.product-card .belt:hover {
+    background-color: rgba(255, 255, 255, .6);
 }
 
 .product-card--info {
