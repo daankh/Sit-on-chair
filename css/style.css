@@ -220,6 +220,7 @@ button {
 
 .header__nav-list-item {
     height: 100%;
+    width: calc(100% / 3)
 }
 
 .header__nav-link:link,
@@ -231,9 +232,18 @@ button {
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 1px;
+    background-color: #000;
+    position: relative;
+    z-index: 100;
 
     display: flex;
     align-items: center;
+
+    transition: color .2s;
+}
+
+.header__nav-list-item:not(:first-child) .header__nav-link:hover {
+    color: #57BDA3;
 }
 
 /* dropdown menu */
@@ -253,29 +263,23 @@ button {
     left: 50%;
     top: 0;
     transform: translate(-100%, -9px);
-    border-width: 0;
-    transition: .1s;
 }
 
 .header__sublist {
     list-style: none;
     position: absolute;
     top: 40px;
-    left: -15px;
+    left: -12px;
     width: 120px;
     height: 105px;
     z-index: 1;
     padding-top: 10px;
-    height: 0;
-    transition: height .2s;
+    transform: translateY(-100%);
+    transition: transform .2s
 }
 
 .dropdown:hover .header__sublist {
-    height: 105px;
-}
-
-.dropdown:hover .header__sublist::before {
-    border-width: 10px;
+    transform: translateY(0)
 }
 
 .header__sublist-item {
@@ -293,6 +297,11 @@ button {
 
     display: flex;
     align-items: center;
+    transition: color .2s;
+}
+
+.header__sublist-link:hover {
+    color: #57BDA3;
 }
 
 .header__sublist-item:first-child .header__sublist-link {
