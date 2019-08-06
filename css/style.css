@@ -645,6 +645,11 @@ button {
     color: #909090;
 }
 
+.contact-form__input:focus,
+.contact-form__textarea:focus {
+    outline: 3px solid #57BBA0;
+}
+
 .contact-form__input::placeholder,
 .contact-form__textarea::placeholder {
     color: #E5E5E5;
