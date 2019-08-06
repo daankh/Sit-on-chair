@@ -665,6 +665,7 @@ button {
 .contact-form__personal-data-processing {
     display: flex;
     margin-bottom: 32px;
+    cursor: pointer;
 }
 
 .contact-form__personal-data-processing input {
