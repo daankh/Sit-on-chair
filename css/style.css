@@ -211,20 +211,20 @@ button {
     height: 100%;
 }
 
-.header__nav-list {
+.main-nav {
     height: 100%;
     list-style: none;
     display: flex;
     justify-content: space-between;
 }
 
-.header__nav-list-item {
+.main-nav__item {
     height: 100%;
     width: calc(100% / 3)
 }
 
-.header__nav-link:link,
-.header__nav-link:visited {
+.main-nav__link:link,
+.main-nav__link:visited {
     width: 100%;
     height: 100%;
     color: inherit;
@@ -242,7 +242,7 @@ button {
     transition: color .2s;
 }
 
-.header__nav-list-item:not(:first-child) .header__nav-link:hover {
+.main-nav__item:not(:first-child) .main-nav__link:hover {
     color: #57BDA3;
 }
 
@@ -251,7 +251,7 @@ button {
     position: relative;
 }
 
-.header__sublist::before {
+.sub-nav::before {
     content: '';
     border-top: 10px solid transparent;
     border-left: 10px solid transparent;
@@ -265,7 +265,7 @@ button {
     transform: translate(-100%, -9px);
 }
 
-.header__sublist {
+.sub-nav {
     list-style: none;
     position: absolute;
     top: 40px;
@@ -278,17 +278,17 @@ button {
     transition: transform .2s
 }
 
-.dropdown:hover .header__sublist {
+.dropdown:hover .sub-nav {
     transform: translateY(0)
 }
 
-.header__sublist-item {
+.sub-nav__item {
     background-color: #000;
     height: calc(100%/3);
 }
 
-.header__sublist-link:link,
-.header__sublist-link:visited {
+.sub-nav__link:link,
+.sub-nav__link:visited {
     color: #fff;
     font-size: 1.6rem;
     width: 100%;
@@ -300,19 +300,19 @@ button {
     transition: color .2s;
 }
 
-.header__sublist-link:hover {
+.sub-nav__link:hover {
     color: #57BDA3;
 }
 
-.header__sublist-item:first-child .header__sublist-link {
+.sub-nav__item:first-child .sub-nav__link {
     padding-top: 1.3rem;
 }
 
-.header__sublist-item:nth-child(2) .header__sublist-link {
+.sub-nav__item:nth-child(2) .sub-nav__link {
     padding-top: .4rem;
 }
 
-.header__sublist-item:last-child .header__sublist-link {
+.sub-nav__item:last-child .sub-nav__link {
     padding-bottom: .3rem;
 }
 
@@ -410,7 +410,7 @@ button {
 
 .product-card .belt {
     left: 0;
-    bottom: 1.6rem;
+    top: 56%;
     height: 6rem;
     width: 100%;
     background-color: rgba(255, 255, 255, .4);
@@ -421,15 +421,15 @@ button {
     background-color: rgba(255, 255, 255, .6);
 }
 
-.product-card--info {
+.find-inputs {
     width: 32.3%;
-    height: 25.4rem;
+    /* height: 25.4rem; */
     margin-bottom: 0;
     border: 1px solid grey;
     padding: 3rem 2.2rem;
 }
 
-.product-card--info p {
+.find-inputs p {
     font-size: 1.4rem;
     line-height: 150%;
     margin: 1.4rem 0;
@@ -506,7 +506,7 @@ button {
     border-bottom: none;
 }
 
-.card-price-container {
+.card-price__container {
     border: 2px solid #C2C2C2;
     color: #C5C5C5;
     background-color: #fff;
@@ -519,30 +519,30 @@ button {
 
 }
 
-.card-price--green .card-price-container {
+.card-price--green .card-price__container {
     border-color: #5DC9AC;
     color: #5DC9AC;
 }
 
-.card-price-value {
+.card-price__value {
     position: absolute;
     font-size: 4.6rem;
     left: 3.3rem;
     top: 2.4rem;
 }
 
-.card-price-value--threeNumbers {
+.card-price__value--threeNumbers {
     left: 1.4rem;
 }
 
-.card-price-value span {
+.card-price__value span {
     position: relative;
     left: 0;
     top: -2.4rem;
     font-size: 1.6rem;
 }
 
-.card-price-currency {
+.card-price__currency {
     position: absolute;
     text-transform: uppercase;
     font-size: 1.6rem;
@@ -551,38 +551,38 @@ button {
     transform: translateX(-50%)
 }
 
-.card-feature {
+.card__feature {
     height: 4.4rem;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.card-feature:nth-of-type(2n-1) {
+.card__feature:nth-of-type(2n-1) {
     background-color: #F2F2F2;
     color: #6F6F6F;
 }
 
-.plan-card--green .card-feature:nth-of-type(2n-1) {
+.plan-card--green .card__feature:nth-of-type(2n-1) {
     background-color: #F2F2F2;
     color: #B0B1B0;
 }
 
-.card-feature:nth-of-type(2n) {
+.card__feature:nth-of-type(2n) {
     background-color: #E4E4E4;
     color: #909090;
 }
 
-.plan-card--green .card-feature:nth-of-type(2n) {
+.plan-card--green .card__feature:nth-of-type(2n) {
     background-color: #fff;
     color: #B0B1B0;
 }
 
-.card-feature p {
+.card__feature p {
     font-size: 2.4rem;
 }
 
-.card-btn-container {
+.card__btn-container {
     flex-grow: 1;
 
     display: flex;
