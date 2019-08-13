@@ -399,9 +399,9 @@ button {
     position: relative;
 }
 
-.product-card>* {
+/* .product-card>* {
     position: absolute;
-}
+} */
 
 .product-card img {
     width: 100%;
@@ -409,16 +409,21 @@ button {
 }
 
 .product-card .belt {
+    position: absolute;
     left: 0;
     top: 56%;
     height: 6rem;
     width: 100%;
     background-color: rgba(255, 255, 255, .4);
-    transition: .2s;
+    transition: .3s;
 }
 
 .product-card .belt:hover {
     background-color: rgba(255, 255, 255, .6);
+}
+
+.product-card:hover .belt {
+    opacity: 0;
 }
 
 .find-inputs {
