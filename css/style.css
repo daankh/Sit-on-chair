@@ -347,13 +347,29 @@ button {
 }
 
 .slider__img {
-    top: 70px;
-    left: -37px;
+    width: 470px;
+    height: 337px;
+    top: 100px;
+    left: 30px;
+    position: relative;
 }
 
 .slider__img img {
-    width: 125%;
-    height: auto;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    transition: .3s;
+}
+
+.slider__img img[src="images/orange_chair.png"] {
+    width: 80%;
+    top: 40px;
+    left: 40px;
+}
+
+.slider__img img.hidden {
+    opacity: 0;
 }
 
 .slider__text {

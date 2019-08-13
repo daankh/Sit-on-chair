@@ -45,9 +45,10 @@
         </div>
         <div class="header__slider">
             <div class="wrap wrap--slider">
-                <button class="btn slider__arrow">&lt;</button>
+                <button data-arrow="left" class="btn slider__arrow">&lt;</button>
                 <div class="slider__img">
-                    <img src="images/black_chair.png" alt="Top chair">
+                    <img class="" src="images/black_chair.png" alt="Top chair">
+                    <img class="hidden" src="images/orange_chair.png" alt="Top chair">
                 </div>
                 <div class="slider__text">
                     <h1>Sit <span>on</span> our <span>chair</span></h1>
@@ -57,7 +58,7 @@
                         obcaecati similique?</p>
                     <button class='btn btn--slider btn--green'>Zobacz więcej</button>
                 </div>
-                <button class="btn slider__arrow">&gt;</button>
+                <button data-arrow="right" class="btn slider__arrow">&gt;</button>
             </div>
         </div>
     </header>
@@ -215,6 +216,8 @@
             </div>
         </div>
     </footer>
+
+    <script src="./scripts/app.js"></script>
 </body>
 
 </html>
