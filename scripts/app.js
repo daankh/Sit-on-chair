@@ -33,6 +33,11 @@ document.addEventListener('DOMContentLoaded', function () {
     var colorsElements = application.querySelectorAll('[data-type="color"] li')
     var fabricsElements = application.querySelectorAll('[data-type="fabric"] li')
     var listItems = application.querySelectorAll('.list_panel li')
+    var transportCheckbox = application.querySelector('#transport')
+    var totalPriceEl = application.querySelector('.sum')
+    var transportEl = application.querySelector('.summary_panel .transport')
+    var prices = []
+    var total = 0
 
     var chairsNames = []
     var colorsNames = []
@@ -41,18 +46,33 @@ document.addEventListener('DOMContentLoaded', function () {
     colorsElements.forEach(color => colorsNames.push(color.innerText))
     fabricsElements.forEach(fabric => fabricNames.push(fabric.innerText))
 
+    var showPrice = function (prices) {
+        prices.forEach(price => total += price)
+        totalPriceEl.textContent = total
+    }
+
     var calculateTotalPrice = function () {
-        var prices = []
+        total = 0;
+        prices = []
+
+        if (transportCheckbox.checked) {
+            total += Number(transportCheckbox.dataset.transportPrice);
+        }
+
         var includesChairName = false
         var includesColorName = false
         var includesFabricName = false
+        var choseChairName = application.querySelector('[data-id="chosenChair"]')
+        var chosenColorName = application.querySelector('[data-id="chosenColor"]')
+        var chosenFabricName = application.querySelector('[data-id="chosenFabric"]')
+
 
         //sprawdza, czy wybrano nazwę krzesła
-        for (var i = 0; i < chairsElements.length; i++) {
-            if (chairsNames.includes(chairsElements[i].textContent)) {
+        chairsNames.forEach((item) => {
+            if (item === choseChairName.textContent) {
                 includesChairName = true
             }
-        }
+        })
 
         if (includesChairName) {
             var chairNameEl = application.querySelector('.summary_panel h4.title')
@@ -74,25 +94,59 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         //sprawdza, czy wybrano kolor
-        for (var i = 0; i < colorsElements.length; i++) {
-            if (colorsNames.includes(colorsElements[i].textContent)) {
+        colorsNames.forEach((item) => {
+            if (item === chosenColorName.textContent) {
                 includesColorName = true
             }
-        }
+        })
 
-        if (includesColorName) {}
+        if (includesColorName) {
+            var colorNameEl = application.querySelector('.summary_panel .color')
+            var priceColorEl = application.querySelector('.summary_panel .color.value')
+            if (chosenColorName.textContent === "Czerwony") {
+                price = 20
+                prices.push(price)
+                priceColorEl.textContent = price
+                colorNameEl.textContent = chosenColorName.textContent
+            } else if (chosenColorName.textContent === 'Czarny') {
+                price = 0
+                prices.push(price)
+                priceColorEl.textContent = price
+                colorNameEl.textContent = chosenColorName.textContent
+            } else if (chosenColorName.textContent === 'Pomarańczowy') {
+                price = 10
+                prices.push(price)
+                priceColorEl.textContent = price
+                colorNameEl.textContent = chosenColorName.textContent
+            }
+
+        }
 
         //sprawdza, czy wybrano nazwę tkaninę
-        for (var i = 0; i < fabricsElements.length; i++) {
-            if (fabricNames.includes(fabricsElements[i].textContent)) {
+        fabricNames.forEach((item) => {
+            if (item === chosenFabricName.textContent) {
                 includesFabricName = true
             }
+        })
+
+        if (fabricNames) {
+            var fabricNameEl = application.querySelector('.summary_panel .pattern')
+            var priceFabricEl = application.querySelector('.summary_panel .pattern.value')
+            if (chosenFabricName.textContent === "Tkanina") {
+                price = 0
+                prices.push(price)
+                priceFabricEl.textContent = price
+                fabricNameEl.textContent = chosenFabricName.textContent
+            } else if (chosenFabricName.textContent === 'Skóra') {
+                price = 100
+                prices.push(price)
+                priceFabricEl.textContent = price
+                fabricNameEl.textContent = chosenFabricName.textContent
+            }
+
         }
 
-        var totalPriceEl = application.querySelector('.sum')
-        total = 0
-        prices.forEach(price => total += price)
-        totalPriceEl.textContent = total
+        showPrice(prices)
     }
 
     dropdownArrows.forEach(arrow => {
@@ -110,6 +164,17 @@ document.addEventListener('DOMContentLoaded', function () {
             dropDownList.classList.toggle('show')
             calculateTotalPrice()
         })
+    })
+
+    transportCheckbox.addEventListener('change', function () {
+        total = 0;
+        if (transportCheckbox.checked) {
+            total += Number(transportCheckbox.dataset.transportPrice);
+            transportEl.textContent = "transport"
+        } else {
+            transportEl.textContent = ""
+        }
+        showPrice(prices)
     })
 
 })
