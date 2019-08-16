@@ -38,6 +38,8 @@ document.addEventListener('DOMContentLoaded', function () {
     var transportEl = application.querySelector('.summary_panel .transport')
     var prices = []
     var total = 0
+    var sendButton = application.querySelector('[data-id="send"]')
+
 
     var chairsNames = []
     var colorsNames = []
@@ -45,6 +47,9 @@ document.addEventListener('DOMContentLoaded', function () {
     chairsElements.forEach(chair => chairsNames.push(chair.innerText))
     colorsElements.forEach(color => colorsNames.push(color.innerText))
     fabricsElements.forEach(fabric => fabricNames.push(fabric.innerText))
+    var includesChairName = false
+    var includesColorName = false
+    var includesFabricName = false
 
     var showPrice = function (prices) {
         prices.forEach(price => total += price)
@@ -59,9 +64,6 @@ document.addEventListener('DOMContentLoaded', function () {
             total += Number(transportCheckbox.dataset.transportPrice);
         }
 
-        var includesChairName = false
-        var includesColorName = false
-        var includesFabricName = false
         var choseChairName = application.querySelector('[data-id="chosenChair"]')
         var chosenColorName = application.querySelector('[data-id="chosenColor"]')
         var chosenFabricName = application.querySelector('[data-id="chosenFabric"]')
@@ -177,4 +179,11 @@ document.addEventListener('DOMContentLoaded', function () {
         showPrice(prices)
     })
 
+
+    sendButton.addEventListener('click', function (e) {
+
+        if (!includesChairName || !includesColorName || !includesFabricName) {
+            e.preventDefault();
+        }
+    })
 })
